@@ -26,7 +26,9 @@ class MyHomePage extends StatelessWidget {
         title: const Text('Flutter images demo'),
       ),
       body: Column(
-        children: const <Widget>[],
+        children: const <Widget>[
+          // qui inseriremo le nostre immagini
+        ],
       ),
     );
   }
