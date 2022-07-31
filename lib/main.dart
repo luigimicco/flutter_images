@@ -25,11 +25,38 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Flutter images demo'),
       ),
-      body: Column(
-        children: const <Widget>[
-          // qui inseriremo le nostre immagini
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            ImageCard("assets/images/duck.png"),
+            ImageCard("assets/images/cat.webp"),
+            ImageCard("assets/images/dart.jpg"),
+          ],
+        ),
       ),
     );
+  }
+
+  // ImageCard
+  Widget ImageCard(imagePath) {
+    return Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Card(
+          elevation: 5,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              constraints: const BoxConstraints.expand(height: 300),
+              alignment: Alignment.center,
+              child: Image.asset(
+                imagePath,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ));
   }
 }
